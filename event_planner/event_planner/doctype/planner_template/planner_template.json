@@ -1,0 +1,89 @@
+{
+ "actions": [],
+ "autoname": "field:template_name",
+ "creation": "2026-11-19 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "project_type",
+  "description",
+  "parts",
+  "snapshot"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "label": "Template Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "bold": 1
+  },
+  {
+   "fieldname": "project_type",
+   "fieldtype": "Link",
+   "label": "Project Type",
+   "options": "Project Type",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "parts",
+   "fieldtype": "JSON",
+   "label": "Parts",
+   "description": "Part keys a new project gets, e.g. [\"brief\", \"boq_audio\", \"logistics\"]."
+  },
+  {
+   "fieldname": "snapshot",
+   "fieldtype": "JSON",
+   "label": "Board",
+   "read_only": 1,
+   "description": "The saved board of a project: categories, work items (as a checklist), pages, BOQ lines, views and sidebar order. Empty: the template only lists parts."
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-19 16:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Event Planner",
+ "name": "Planner Template",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "Projects Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1,
+   "export": 1
+  },
+  {
+   "role": "Projects User",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1,
+   "report": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

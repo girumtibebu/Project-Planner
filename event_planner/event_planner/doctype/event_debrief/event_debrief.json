@@ -1,0 +1,112 @@
+{
+ "actions": [],
+ "autoname": "format:EDB-{project}",
+ "creation": "2026-04-30 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "project",
+  "title",
+  "template",
+  "version",
+  "last_exported_on",
+  "section_content",
+  "content",
+  "content_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "in_global_search": 1,
+   "bold": 1
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "in_list_view": 1,
+   "description": "Defaults to '{Project} — Event Debrief' if left blank"
+  },
+  {
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "label": "Template",
+   "options": "Event Brief Template",
+   "description": "The template this debrief was started from (kind = debrief)"
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Int",
+   "label": "Version",
+   "default": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "last_exported_on",
+   "fieldtype": "Datetime",
+   "label": "Last Exported On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_content",
+   "fieldtype": "Section Break",
+   "label": "Content"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Long Text",
+   "label": "Content (Markdown)",
+   "description": "Markdown source — edited via Tiptap in the Event Planner SPA"
+  },
+  {
+   "fieldname": "content_json",
+   "fieldtype": "Long Text",
+   "label": "Content JSON",
+   "description": "Reserved for future use",
+   "hidden": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-04-30 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Event Planner",
+ "name": "Event Debrief",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "project,title",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "title"
+}

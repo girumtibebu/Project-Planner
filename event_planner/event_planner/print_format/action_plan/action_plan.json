@@ -1,0 +1,16 @@
+{
+ "creation": "2026-01-01 00:00:00.000000",
+ "custom_format": 1,
+ "disabled": 0,
+ "doc_type": "Task",
+ "doctype": "Print Format",
+ "html": "{% set tasks = frappe.get_all('Task', filters={'project': doc.project}, fields=['name','subject','status','ep_action_category','exp_start_date','exp_end_date','_assign'], order_by='ep_sort_order asc, creation asc') %}\n<h1 style=\"font-size:20px;font-weight:700;margin-bottom:16px;\">Action Plan — {{ doc.project }}</h1>\n{% set cats = namespace(last='') %}\n{% for t in tasks %}\n  {% if t.ep_action_category != cats.last %}\n    {% if cats.last != '' %}</tbody></table>{% endif %}\n    <h3 style=\"font-size:13px;text-transform:uppercase;letter-spacing:.1em;color:#6b7280;margin:16px 0 6px;\">{{ t.ep_action_category or 'Uncategorised' }}</h3>\n    <table style=\"width:100%;border-collapse:collapse;font-size:12px;\">\n    <thead><tr><th style=\"text-align:left;padding:5px 8px;border-bottom:1px solid #e5e7eb;\">Task</th><th style=\"text-align:left;padding:5px 8px;border-bottom:1px solid #e5e7eb;\">Status</th><th style=\"text-align:left;padding:5px 8px;border-bottom:1px solid #e5e7eb;\">Assigned</th><th style=\"text-align:left;padding:5px 8px;border-bottom:1px solid #e5e7eb;\">Due</th></tr></thead><tbody>\n    {% set cats.last = t.ep_action_category %}\n  {% endif %}\n  <tr>\n    <td style=\"padding:5px 8px;border-bottom:1px solid #f3f4f6;\">{{ t.subject }}</td>\n    <td style=\"padding:5px 8px;border-bottom:1px solid #f3f4f6;\">{{ t.status }}</td>\n    <td style=\"padding:5px 8px;border-bottom:1px solid #f3f4f6;\">{% set _assigned = frappe.parse_json(t._assign or '[]') %}{{ _assigned[0] if _assigned else '—' }}</td>\n    <td style=\"padding:5px 8px;border-bottom:1px solid #f3f4f6;\">{{ t.exp_end_date or '—' }}</td>\n  </tr>\n{% endfor %}\n{% if tasks %}</tbody></table>{% endif %}",
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Event Planner",
+ "name": "Action Plan",
+ "owner": "Administrator",
+ "print_format_builder": 0,
+ "print_format_type": "Jinja",
+ "standard": "Yes"
+}

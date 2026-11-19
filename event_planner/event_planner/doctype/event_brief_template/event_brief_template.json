@@ -1,0 +1,142 @@
+{
+ "actions": [],
+ "autoname": "field:template_name",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "template_name",
+  "kind",
+  "category",
+  "col1",
+  "is_default",
+  "is_active",
+  "seeded",
+  "description",
+  "thumbnail",
+  "section_content",
+  "content",
+  "content_json"
+ ],
+ "fields": [
+  {
+   "fieldname": "template_name",
+   "fieldtype": "Data",
+   "label": "Template Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "in_global_search": 1,
+   "bold": 1
+  },
+  {
+   "fieldname": "kind",
+   "fieldtype": "Select",
+   "label": "Used For",
+   "options": "brief\ndebrief",
+   "default": "brief",
+   "reqd": 1,
+   "in_list_view": 1,
+   "description": "Determines whether this template appears in the Brief gallery or the Debrief gallery."
+  },
+  {
+   "fieldname": "category",
+   "fieldtype": "Select",
+   "label": "Category",
+   "options": "\nProduction\nMarketing\nConference\nConcert\nCorporate\nOther",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "is_default",
+   "fieldtype": "Check",
+   "label": "Is Default",
+   "description": "One default per category. If checked, this template is auto-applied when creating a new Brief without picking.",
+   "default": "0"
+  },
+  {
+   "fieldname": "is_active",
+   "fieldtype": "Check",
+   "label": "Is Active",
+   "default": "1",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "seeded",
+   "fieldtype": "Check",
+   "label": "Seeded",
+   "read_only": 1,
+   "default": "0",
+   "description": "Auto-set for templates installed with the app. These are removed on uninstall."
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Description",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "thumbnail",
+   "fieldtype": "Attach Image",
+   "label": "Thumbnail"
+  },
+  {
+   "fieldname": "section_content",
+   "fieldtype": "Section Break",
+   "label": "Template Content"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Long Text",
+   "label": "Content (Markdown)",
+   "description": "Markdown source for this template"
+  },
+  {
+   "fieldname": "content_json",
+   "fieldtype": "Long Text",
+   "label": "Content JSON",
+   "hidden": 1,
+   "description": "Reserved for future use"
+  }
+ ],
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Event Planner",
+ "name": "Event Brief Template",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Projects User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "search_fields": "kind,category,description",
+ "sort_field": "template_name",
+ "sort_order": "ASC",
+ "title_field": "template_name"
+}

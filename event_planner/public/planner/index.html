@@ -1,0 +1,23 @@
+<!doctype html>
+<html class="h-full" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planner</title>
+    <script type="module" crossorigin src="/assets/event_planner/planner/assets/index-Bw5p58Xt.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/event_planner/planner/assets/runtime-core.esm-bundler-DC3Tigql.js">
+    <link rel="modulepreload" crossorigin href="/assets/event_planner/planner/assets/TooltipBubble-x6m506RK.js">
+    <link rel="modulepreload" crossorigin href="/assets/event_planner/planner/assets/debounce-CBHZy1lM.js">
+    <link rel="stylesheet" crossorigin href="/assets/event_planner/planner/assets/index-CTTGyrEA.css">
+  </head>
+  <body class="h-full">
+    <div id="app" class="h-full"></div>
+  
+          <script>
+              {% for key in boot %}
+              window["{{ key }}"] = {{ boot[key] | tojson }};
+              {% endfor %}
+          </script>
+          </body>
+          
+</html>

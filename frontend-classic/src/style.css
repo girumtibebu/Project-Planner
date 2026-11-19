@@ -1,0 +1,112 @@
+/* ─── Design tokens (ported from eventplaner/Event Planner.html) ──────────── */
+:root {
+  --bg:             #FAF9F7;
+  --bg-2:           #F4F2EE;
+  --panel:          #FFFFFF;
+  --panel-2:        #FAF9F7;
+  --row-hover:      #F4F2EE;
+  --border:         #EAE6DF;
+  --border-2:       #DCD6CC;
+  --text:           #1A1915;
+  --text-2:         #5B574F;
+  --text-3:         #8F8A7E;
+  --accent:         #CC785C;
+  --accent-2:       #D97757;
+  --accent-soft:    rgba(204,120,92,.12);
+  --accent-softer:  rgba(204,120,92,.06);
+  --danger:         #C2410C;
+  --warn:           #CA8A04;
+  --ok:             #15803D;
+  --purple:         #7C3AED;
+  --pink:           #DB2777;
+  --teal:           #0D9488;
+
+  /* Schedule tag colours */
+  --tag-ops:     #2DD4BF;
+  --tag-talent:  #F472B6;
+  --tag-guest:   #F59E0B;
+  --tag-program: #3B82F6;
+  --tag-break:   #6C6E76;
+  --tag-other:   #A78BFA;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.003em;
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #DCD6CC; border-radius: 6px; border: 2px solid var(--bg); }
+::-webkit-scrollbar-track { background: transparent; }
+
+button { font-family: inherit; }
+
+#app { min-height: 100vh; display: flex; flex-direction: column; }
+
+/* ─── Utility classes ─────────────────────────────────────────────────────── */
+.ep-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: .03em;
+}
+
+.ep-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid var(--border-2);
+  background: var(--panel-2);
+  color: var(--text);
+  transition: background 0.1s;
+}
+.ep-btn:hover { background: var(--row-hover); }
+.ep-btn--primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.ep-btn--primary:hover { background: var(--accent-2); border-color: var(--accent-2); }
+
+.ep-card {
+  border: 1px solid var(--border);
+  background: var(--panel);
+  border-radius: 8px;
+  padding: 16px;
+}
+
+/* ─── Brief section callout block ─────────────────────────────────────────── */
+.ep-section {
+  position: relative;
+  padding: 6px 0 6px 20px;
+  margin-top: 14px;
+  border-left: 2px solid var(--border);
+}
+.ep-section--objectives  { border-left-color: #3B82F688; }
+.ep-section--audience    { border-left-color: #A78BFA88; }
+.ep-section--messages    { border-left-color: #2DD4BF88; }
+.ep-section--deliverables{ border-left-color: #F59E0B88; }
+.ep-section--notes       { border-left-color: #6C6E7688; }

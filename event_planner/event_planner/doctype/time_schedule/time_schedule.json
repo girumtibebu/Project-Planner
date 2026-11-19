@@ -1,0 +1,80 @@
+{
+ "actions": [],
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "event_activity",
+  "from_datetime",
+  "to_datetime",
+  "col1",
+  "person",
+  "location",
+  "tag",
+  "remark"
+ ],
+ "fields": [
+  {
+   "fieldname": "event_activity",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Event Activity",
+   "options": "Event Activity",
+   "reqd": 1
+  },
+  {
+   "fieldname": "from_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "From",
+   "reqd": 1
+  },
+  {
+   "fieldname": "to_datetime",
+   "fieldtype": "Datetime",
+   "in_list_view": 1,
+   "label": "To",
+   "reqd": 1
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "person",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Person",
+   "options": "User"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Location"
+  },
+  {
+   "fieldname": "tag",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Tag",
+   "options": "\nOps\nTalent\nGuest\nProgram\nBreak\nOther"
+  },
+  {
+   "fieldname": "remark",
+   "fieldtype": "Data",
+   "label": "Remark"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Event Planner",
+ "name": "Time Schedule",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

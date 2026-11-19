@@ -1,0 +1,16 @@
+{
+ "creation": "2026-01-01 00:00:00.000000",
+ "custom_format": 1,
+ "disabled": 0,
+ "doc_type": "Event Brief",
+ "doctype": "Print Format",
+ "html": "{% set md = doc.content or '' %}{% if md %}<style>.eb-print{font-family:Inter,sans-serif;font-size:13px;line-height:1.75;color:#111;max-width:800px;margin:0 auto;padding:20px 40px}.eb-print h1{font-size:24px;font-weight:700;margin:0 0 4px}.eb-print h2{font-size:18px;font-weight:600;margin:1.5em 0 .4em;border-bottom:1px solid #e5e7eb;padding-bottom:4px}.eb-print h3{font-size:14.5px;font-weight:600;margin:1.2em 0 .3em}.eb-print p{margin:.4em 0}.eb-print ul,ol{padding-left:1.5em;margin:.4em 0}.eb-print li{margin:.2em 0}.eb-print blockquote{border-left:3px solid #cc785c;margin:.6em 0;padding:4px 0 4px 14px;color:#555;font-style:italic}.eb-print code{font-family:monospace;background:#f3f4f6;border:1px solid #e5e7eb;border-radius:3px;padding:1px 4px;font-size:12px}.eb-print pre{background:#f3f4f6;border:1px solid #e5e7eb;border-radius:6px;padding:12px;overflow-x:auto}.eb-print hr{border:none;border-top:1px solid #e5e7eb;margin:1.5em 0}.eb-print .meta{font-size:11px;color:#6b7280;margin-bottom:20px}.eb-print table{border-collapse:collapse;width:100%}.eb-print td,.eb-print th{border:1px solid #e5e7eb;padding:6px 10px;font-size:12px}.eb-print th{background:#f9fafb;font-weight:600}</style><div class=\"eb-print\"><h1>{{ doc.title or doc.name }}</h1><div class=\"meta\">{{ doc.project }} &nbsp;·&nbsp; v{{ doc.version }} &nbsp;·&nbsp; {{ doc.modified.strftime('%d %b %Y') if doc.modified else '' }}</div>{{ frappe.utils.md_to_html(md) | safe }}</div>{% else %}<p style=\"color:#9ca3af;\">No content yet.</p>{% endif %}",
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Event Planner",
+ "name": "Event Brief",
+ "owner": "Administrator",
+ "print_format_builder": 0,
+ "print_format_type": "Jinja",
+ "standard": "Yes"
+}

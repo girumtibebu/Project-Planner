@@ -1,0 +1,201 @@
+{
+ "actions": [],
+ "autoname": "hash",
+ "creation": "2026-11-06 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "title",
+  "icon",
+  "project",
+  "parent_page",
+  "page_kind",
+  "column_break_1",
+  "template",
+  "sort_order",
+  "is_locked",
+  "version",
+  "section_boq",
+  "department",
+  "boq_status",
+  "column_break_boq",
+  "reviewed_at",
+  "reviewed_by",
+  "lines_removed_at",
+  "section_content",
+  "content"
+ ],
+ "fields": [
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "icon",
+   "fieldtype": "Data",
+   "label": "Icon",
+   "description": "An emoji shown before the title."
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "label": "Project",
+   "options": "Project",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "parent_page",
+   "fieldtype": "Link",
+   "label": "Parent Page",
+   "options": "Planner Page"
+  },
+  {
+   "fieldname": "page_kind",
+   "fieldtype": "Select",
+   "label": "Kind",
+   "options": "Notes\nBrief\nDebrief\nCall Sheet\nRun Sheet\nBOQ",
+   "default": "Notes",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "column_break_1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "template",
+   "fieldtype": "Link",
+   "label": "Template",
+   "options": "Event Brief Template",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sort_order",
+   "fieldtype": "Int",
+   "label": "Sort Order",
+   "default": "0"
+  },
+  {
+   "fieldname": "is_locked",
+   "fieldtype": "Check",
+   "label": "Locked",
+   "description": "A locked page can be read but not edited."
+  },
+  {
+   "fieldname": "version",
+   "fieldtype": "Int",
+   "label": "Version",
+   "default": "1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_boq",
+   "fieldtype": "Section Break",
+   "label": "Tech BOQ",
+   "depends_on": "eval:doc.page_kind=='BOQ'"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Select",
+   "label": "Department",
+   "options": "\nAudio\nVideo\nLighting\nRigging\nPower",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "boq_status",
+   "fieldtype": "Select",
+   "label": "BOQ Status",
+   "options": "Draft\nSent to warehouse\nBooked\nChecked out\nReturned",
+   "default": "Draft",
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "column_break_boq",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "reviewed_at",
+   "fieldtype": "Datetime",
+   "label": "Warehouse Reviewed At",
+   "read_only": 1,
+   "description": "Lines the tech team changed after this time show as changed."
+  },
+  {
+   "fieldname": "reviewed_by",
+   "fieldtype": "Link",
+   "label": "Warehouse Reviewed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "lines_removed_at",
+   "fieldtype": "Datetime",
+   "label": "Lines Last Removed At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_content",
+   "fieldtype": "Section Break",
+   "label": "Content"
+  },
+  {
+   "fieldname": "content",
+   "fieldtype": "Text Editor",
+   "label": "Content"
+  }
+ ],
+ "links": [],
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "Event Planner",
+ "name": "Planner Page",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Projects Manager",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  },
+  {
+   "role": "Projects User",
+   "read": 1,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "email": 1,
+   "share": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1,
+ "title_field": "title",
+ "show_title_field_in_link": 1
+}
